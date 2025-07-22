@@ -10,14 +10,17 @@
 <body>
   <div class="primary">
     <h1>Web Scraper</h1>
-    <p class="description">Approximate number of links to fetch 
-      <span id="counter">0</span>
-    </p>
     <button id="scrapeButton">Scrape Links</button>
-    <script src="popup.js"></script>
   </div>
   <div class="secondary">
-    <p>1<p>
+    <span class="loader"></span>
+    <p class="status">Fetching</p>
+    <p>Done : <span class="counterDone">0</span>/<span class="counterTotal">0</span></p>
   </div>
+  <div class="end">
+    <p>All done!</p>
+    <button id="exportButton">Export</button>
+  </div>
+  <script src="popup.js"></script>
 </body>
 </html>
