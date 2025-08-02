@@ -2,25 +2,40 @@
 <html>
 <head>
   <link rel="stylesheet" href="popup.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <div class="primary">
     <h1>Web Scraper</h1>
+    <div class="inputHtmlTag">
+      <div>
+        <label>Name:</label>
+        <button id="nameButton">select html tag</button>
+      </div>
+      <div>
+        <label>Price:</label>
+        <button id="priceButton">select html tag</button>
+      </div>
+      <div>
+        <label>Description:</label>
+        <button id="descriptionButton">select html tag</button>
+      </div> 
+    </div>
     <button id="scrapeButton">Scrape Links</button>
   </div>
   <div class="secondary">
     <span class="loader"></span>
     <p class="status">Fetching</p>
     <p>Done : <span class="counterDone">0</span>/<span class="counterTotal">0</span></p>
+    <p>Error: <span class="counterError">0</span></p>
   </div>
   <div class="end">
     <p>All done!</p>
     <button id="exportButton">Export</button>
   </div>
-  <script src="popup.js"></script>
+  <script type="module" src="./popup.js"></script>
 </body>
 </html>

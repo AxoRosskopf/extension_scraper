@@ -2,10 +2,12 @@
   "manifest_version": 3,
   "name": "Scraper",
   "version": "1.0",
+  "description": "Extensión para seleccionar elementos en páginas y scrapeo paralelo de links.",
   "permissions": [
     "scripting",
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -15,6 +17,22 @@
   },
   "background": {
     "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-scripts/selection.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content-scripts/selection.js"],
+      "matches":   ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
   },
   "icons": {
     "16": "images/icon-16.png",
